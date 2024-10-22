@@ -8,6 +8,17 @@ figureElement.append(customImg);
 
 const bottone = document.getElementById("bottone");
 bottone.classList.add(`ms-5`);
+let isClicked = false;
 bottone.addEventListener("click", () => {
-  customImg.classList.toggle("d-none");
+  if (isClicked) {
+    customImg.src = "./img/white_lamp.png"; // Immagine lampada spenta
+    customImg.alt = "lampada spenta";
+    bottone.textContent = "Accendi Lampada"; // Cambia il testo del pulsante
+  } else {
+    customImg.src = "./img/yellow_lamp.png"; // Immagine lampada accesa
+    customImg.alt = "lampada accesa";
+    bottone.textContent = "Spegni Lampada"; // Cambia il testo del pulsante
+  }
+
+  isClicked = !isClicked; // Cambia lo stato
 });
